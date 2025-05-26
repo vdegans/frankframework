@@ -22,6 +22,7 @@ import java.net.UnknownHostException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import jakarta.json.Json;
 import jakarta.json.JsonReader;
@@ -237,5 +238,14 @@ public class Misc {
 			}
 		}
 		return sw.toString().trim();
+	}
+
+	public static boolean exclusiveOr(Boolean... params) {
+		if(params == null)
+			return false;
+
+		return Stream.of(params)
+				.filter(b -> b)
+				.count() == 1;
 	}
 }

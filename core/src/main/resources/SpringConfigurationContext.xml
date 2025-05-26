@@ -39,6 +39,9 @@
 
 <!-- 	<bean name="applicationEventMulticaster" class="org.frankframework.lifecycle.FrankEventMulticaster" /> -->
 
+		<bean name="handlebarsEngine" class="org.frankframework.handlebars.HandlebarsEngine" scope="singleton" lazy-init="true" />
+
+
 		<bean
 			name="pipeLineProcessor"
 			class="org.frankframework.processors.InputOutputPipeLineProcessor"
